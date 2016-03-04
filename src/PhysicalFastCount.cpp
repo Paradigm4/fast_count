@@ -92,7 +92,7 @@ public:
 #ifdef CPP11
 virtual RedistributeContext getOutputDistribution(std::vector<RedistributeContext> const&, std::vector<ArrayDesc> const&) const
 {
-	return RedistributeContext(psUndefined);
+	return RedistributeContext(createDistribution(psUndefined),_schema.getResidency());
 }
 #else
 virtual ArrayDistribution getOutputDistribution(std::vector<ArrayDistribution> const&, std::vector<ArrayDesc> const&) const
